@@ -1,8 +1,8 @@
-import "./styles/index.scss";
+import Navbar from "./Components/Navbar";
 function App() {
   return (
     <div>
-     Hello World
+     <Navbar/>
     </div>
   );
 }
