@@ -1,0 +1,15 @@
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import React from 'react';
+
+function SideBar({links,close}) {
+  return <div className='sidebar' onClick={close}>
+    {links.map((link)=>
+                    <a href="#!" className="sidebar-links " key={link.name}>
+                    <FontAwesomeIcon icon={link.icon}/>
+                    {link.name}
+                    </a>
+                )}
+  </div>;
+}
+
+export default SideBar;
