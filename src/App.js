@@ -1,13 +1,25 @@
-import HeroSection from "./Components/HeroSection";
+import{Route, BrowserRouter as Router, Routes} from "react-router-dom";
+
+import Footer from "./Components/Footer";
+import HomePage from "./Pages/HomePage";
 import Navbar from "./Components/Navbar";
+import RecipesPage from "./Pages/RecipesPage";
+import SettingsPage from "./Pages/SettingsPage";
+
 function App() {
   return (
-    <div>
+    <Router>
      <Navbar/>
      <div className="container main" >
-      <HeroSection/>
+     <Routes>
+       <Route path="/" element={<HomePage/>}/>
+       <Route path="/recipes" element={<RecipesPage/>}/>
+       <Route path="/settings" element={<SettingsPage/>}/>
+     </Routes>
+
      </div>
-    </div>
+      <Footer/>
+    </Router>
   );
 }
 

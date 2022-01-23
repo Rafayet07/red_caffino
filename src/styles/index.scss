@@ -22,6 +22,7 @@
 body{
     font-size:var(--font-size);
     font-family: 'Roboto', sans-serif;
+    padding-top: 55px;
 }
 a{
     text-decoration: none;
@@ -68,13 +69,16 @@ img{
 .section{
     display: flex;
     align-items: center;
+    margin-bottom: 3vw;
+    flex-wrap: wrap;
     .col{
         width: 50%;
     }
     .title{
         color: var(--text-color);
-        font-size: 3em;
+        font-size: 2.5em;
         margin-bottom: .25em;
+        font-weight: 900;
     }
     .info{
         color: var(--text-light);
@@ -85,55 +89,52 @@ img{
     }
 }
 
-.section.hero{
-    .typograpy{
-        padding-right: 1em;
-    }
-    .gallery{
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        gap:1.75vw;
-        .custom-image{
-            border-radius: 3px;
-            overflow: hidden;
-            transform: scale(0);
-            opacity: 0;
-            animation: getAnimationDuration(.5s) popOut forwards;
-        
-                &:nth-child(2){
-                    animation-delay:.1s;
-                } 
-                &:nth-child(3){
-                    animation-delay:.2s;
-                }
-                &:nth-child(6){
-                    animation-delay:.3s;
-                }
-                &:nth-child(9){
-                    animation-delay:.4s;
-                }
-                &:nth-child(8){
-                    animation-delay:.5s;
-                }
-                &:nth-child(7){
-                    animation-delay:.6s;
-                }
-                &:nth-child(4){
-                    animation-delay:.7s;
-                }
-                &:nth-child(5){
-                    animation-delay:.8s;
-                } 
+@import "./partials/-hero-section.scss";
+
+@import "./partials/improve-skills";
+
+@import "./partials/quotesSection";
+
+@import "./partials/topChefsSection";
+
+.footer{
+    background-color: #0f0f0f;
+    color:#fff;
+    padding-block: 3em;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 1em;
+    .footer-section{
+        p{
+            opacity: .9;
+            margin-bottom: .5em;
+        }
+        p.title{
+            opacity: 1;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 1em;
         }
     }
 }
+
 .main{
     padding-block: 3vw;
 }
 
 @import "./partials/animation";
 .container{
-  padding-inline:15vw;
+  padding-inline:25vw;
+}
+@media  screen and (max-width: 1280px) {
+    .container{
+        padding-inline:18vw;
+      }
+}
+@media  screen and (max-width: 1050px) {
+    .container{
+        padding-inline:12vw;
+      }
 }
 @media  screen and (max-width: 768px) {
     .navbar{
@@ -144,5 +145,45 @@ img{
             display: block;
         }
     }
-    
+    .section{
+        .col{
+            width: 100%;
+            padding: 0 !important;
+            text-align: center;
+            margin-bottom: 2em;
+        }
+    }
+    .section.improveskills{
+        .btn{
+            display: block;
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .skill-items{
+            display: inline-block;
+            margin: .75em;
+        }
+    }
+    .cheif-card{
+        box-shadow: 0 5px 10px var(--shadow-color);
+    }
+    .container{
+        padding-inline:6vw;
+      }
+      .footer{
+          grid-template-columns: repeat(4,1fr);
+          .footer-section:nth-child(1){
+              grid-column: span 4;
+          }
+          .footer-section:nth-child(2),.footer-section:nth-child(3){
+            grid-column: span 2;
+        }
+      }   
+}
+
+@media  screen and (max-width: 480px) {
+    .container{
+        padding-inline:3vw;
+      }
 }
