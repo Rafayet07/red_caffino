@@ -23,6 +23,7 @@ body{
     font-size:var(--font-size);
     font-family: 'Roboto', sans-serif;
     padding-top: 55px;
+    background-color: var(--background-light);
 }
 a{
     text-decoration: none;
@@ -71,6 +72,9 @@ img{
     align-items: center;
     margin-bottom: 3vw;
     flex-wrap: wrap;
+    &.d-block{
+     display: block;
+    }
     .col{
         width: 50%;
     }
@@ -102,50 +106,57 @@ img{
 //Recipes Section
 @import "./partials/previousSearch";
 
-.recipes-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(220px, 1fr));
-    grid-gap: 1.5em;
-}
-.recipe-card{
-    border-radius: 5px;
-    overflow: hidden;
+@import "./partials/recipePage";
+
+//setting Section
+.options-container{
     box-shadow: 0 5px 10px var(--shadow-color);
-    .receipe-card-info{
-        padding: 15px;
-    }
-    .custom-image{
-        z-index: -1;
-    }
-    .author-img{
-        height: 60px;
-        width: 60px;
-        border-radius: 50%;
-        border: 3px solid var(--background-light);
-        box-shadow: 0 1px 3px var(--shadow-color);
-        margin-top: -50px;
-        z-index: 2;
-    }
-    .recipe-title{
-        font-size: 1.25em;
-        font-weight: bold;
-        margin-bottom: .5em;
-        color: var(--text-color);
-        margin-top: .25em;
-    }
-    .recipe-desc{
-        color: var(--text-light);
-        font-size: .9em;
-        letter-spacing: 1px;
+    padding: 1em;
+    border-radius: 5px;
+    border-left: .5em solid var(--primary-color);
+    background-color: var(--background-light);
+    margin-top: 1em;
+    display: flex;
+    gap: 1em;
+    .option{
+        height: 3.5em;
+        width: 3.5em;
+        box-shadow: 0 3px 6px var(--shadow-color);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &.light{
+            background-color: #fff;
+        }
+        &.dark{
+            background-color: rgb(29,29,29);
+        }
+        .check{
+            height: 2.5em;
+            width: 2.5em;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px var(--shadow-color);
+
+            svg{
+                height: 1.5em;
+                width: 1.5em;
+            }
+        }
 
     }
-    .view-btn{
-        font-size: 1em;
-        font-weight: bold;
-        color: var(--primary-color);
-        margin-top: .75em;
+    .btn span{
         display: inline-block;
+        margin-left: .5em;
     }
+}
+.d-block h2{
+    font-size: 1.75em;
+    color:var(--text-color);
 }
 
 .main{

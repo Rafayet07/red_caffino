@@ -27,12 +27,13 @@
         justify-content: space-between;
         padding-bottom: .5em;
         padding-left: 1em;
+        padding-top: .5em;
         .chief-card-name{
             font-size: 1.5em;
             font-weight: bold;
             color: var(--text-color);
         }
-        .chief-recipe-count.chief-cuisine{
+        .chief-recipe-count,.chief-cuisine{
             font-size: 1.2em;
             color: var(--text-light);
         }
